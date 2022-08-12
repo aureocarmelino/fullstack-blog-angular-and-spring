@@ -178,7 +178,7 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 
 **EN:**	And as a result we will have only the tests of the **PostServiceTest** class executed :arrow_down_small:
 
-**PT:**	E como resultado teremos somentes os testes da classe **PostServiceTest** executados
+**PT:**	E como resultado teremos somentes os testes da classe **PostServiceTest** executados :arrow_down_small:
 
 <p align="center"> 
     <img src="myassets/unit_test2.png">
@@ -198,10 +198,9 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 </p>
 
 
+**EN:	I'll be adding new features as time goes on, I hope you like it	:heart:  :happy:**
 
-**EN:	I'll be adding new features as time goes on, I hope you like it	:heart::happy:**
-
-**PT:	Vou adicionando novas funcionalidades consoante o tempo, espero que tenham gostado	:heart::happy:**
+**PT:	Vou adicionando novas funcionalidades consoante o tempo, espero que tenham gostado	:heart:  :happy:**
 
 # SEJA LUZ :bulb: 		BE LIGHT:bulb: 
 
