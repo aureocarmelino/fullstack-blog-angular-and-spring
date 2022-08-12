@@ -163,7 +163,7 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 **PT:**	Para executar os testes de uma classe específica, em que utilizaremos a classe **PostServiceTest** como exemplo faça como mostra a imagem a seguir :arrow_down_small:
 
 <p align="center"> 
-    <img src="myassets/run_test2.png">
+    <img src="myassets/run_test2.PNG">
 </p>
 
 
