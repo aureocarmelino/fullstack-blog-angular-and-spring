@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "b42aeabb-9eaa-4189-88fd-d9b321474756",
+		"name": "ImperBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t \"gender\" : \"M\",\n\t \"email\" : \"aureo3@hotmail.com\",\n\t \"password\" : \"123\",\n\t \"username\" : \"aureo3\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login OAuth2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "teste",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "teste",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "aureo3@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/oauth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "teste",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "teste",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjEsImVtYWlsIjoicG93ZXJAaG90bWFpbC5jb20iLCJ1c2VybmFtZSI6InBvd2VyIiwicHJvZmlsZVBpY3R1cmUiOm51bGwsImdlbmRlciI6IkZFTUlOSU5FIiwiY3JlYXRpb25EYXRlIjpbMjAyMiw2LDEyLDIxLDQ2LDI2LDU4NDg4NjAwMF0sInVwZGF0ZURhdGUiOlsyMDIyLDYsMTIsMjEsNDYsMjYsNTg2ODg5MDAwXX0sInVzZXJfbmFtZSI6InBvd2VyQGhvdG1haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImF0aSI6ImNjZWU2NzQ3LTljODUtNDBlYS05YTlhLWE5MTU3MWRlYjU0YiIsImV4cCI6MTY1NTUwMjE0NSwiYXV0aG9yaXRpZXMiOlsiQVVUSE9SSVRJRVMiXSwianRpIjoiOTRhNWI0YWUtNDEzOC00YTU0LWJjZWItNzlkYzkwZTllMmYzIiwiY2xpZW50X2lkIjoidGVzdGUifQ.qDuYZJChPePullabS252zVOtT0XjtyZ3asWLiTOa7dA",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/oauth/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjEwLCJlbWFpbCI6ImF1cmVvM0Bob3RtYWlsLmNvbSIsInVzZXJuYW1lIjoiYXVyZW8zIiwiZ2VuZGVyIjoiTSIsImNyZWF0aW9uRGF0ZSI6WzIwMjIsOCwxMiwxOCw0NSw1OSwzMTMxMDQwMDBdLCJ1cGRhdGVEYXRlIjpbMjAyMiw4LDEyLDE4LDQ1LDU5LDMxNTIwMjAwMF19LCJ1c2VyX25hbWUiOiJhdXJlbzNAaG90bWFpbC5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjYwMzI5OTc5LCJhdXRob3JpdGllcyI6WyJBVVRIT1JJVElFUyJdLCJqdGkiOiI0Mzk4YTRhNy1iMDQxLTQxNzgtOThjYy1kMmE3MDhjNmYwMDIiLCJjbGllbnRfaWQiOiJ0ZXN0ZSJ9.ElAxgxu5MRShNG5v7BzbBCtUvtvnqelhPwjSFVBRSAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"postContent\": \"Spring post content\",\n\t \"title\" : \"Spring is a java framework\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjEwLCJlbWFpbCI6ImF1cmVvM0Bob3RtYWlsLmNvbSIsInVzZXJuYW1lIjoiYXVyZW8zIiwiZ2VuZGVyIjoiTSIsImNyZWF0aW9uRGF0ZSI6WzIwMjIsOCwxMiwxOCw0NSw1OSwzMTMxMDQwMDBdLCJ1cGRhdGVEYXRlIjpbMjAyMiw4LDEyLDE4LDQ1LDU5LDMxNTIwMjAwMF19LCJ1c2VyX25hbWUiOiJhdXJlbzNAaG90bWFpbC5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjYwMzI5OTc5LCJhdXRob3JpdGllcyI6WyJBVVRIT1JJVElFUyJdLCJqdGkiOiI0Mzk4YTRhNy1iMDQxLTQxNzgtOThjYy1kMmE3MDhjNmYwMDIiLCJjbGllbnRfaWQiOiJ0ZXN0ZSJ9.ElAxgxu5MRShNG5v7BzbBCtUvtvnqelhPwjSFVBRSAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t \"pkPost\": 4,\n\t \"postContent\": \"Spring post content4\",\n\t \"title\" : \"Spring is a java framework4\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjIsImVtYWlsIjoiYXVyZW9AaG90bWFpbC5jb20iLCJ1c2VybmFtZSI6ImF1cmVvIiwiZ2VuZGVyIjoiTSIsImNyZWF0aW9uRGF0ZSI6WzIwMjIsOCwxMCwxOSwxMiw1OSw2NzQ0MzYwMDBdLCJ1cGRhdGVEYXRlIjpbMjAyMiw4LDEwLDE5LDEyLDU5LDY3NDQ2NzAwMF19LCJ1c2VyX25hbWUiOiJhdXJlb0Bob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NjAzMTIwNTcsImF1dGhvcml0aWVzIjpbIkFVVEhPUklUSUVTIl0sImp0aSI6IjQ2MWZjYTQ1LTIwZGYtNDUwMC1iNzc4LTI0MjQyYmEwNTM0MyIsImNsaWVudF9pZCI6InRlc3RlIn0.OO7-Qu_1rAvc39pUcKvlLWaCZOoX6DKQWXtkc6T5SPM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All My Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjEsImVtYWlsIjoibWFuYUBob3RtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFuYSIsInByb2ZpbGVQaWN0dXJlIjpudWxsLCJnZW5kZXIiOiJGRU1JTklORSIsImNyZWF0aW9uRGF0ZSI6WzIwMjIsNiwxOCwxMywyNywxMV0sInVwZGF0ZURhdGUiOlsyMDIyLDYsMTgsMTMsMjcsMTFdfSwidXNlcl9uYW1lIjoibWFuYUBob3RtYWlsLmNvbSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2NTU5MjIwMTksImF1dGhvcml0aWVzIjpbIkFVVEhPUklUSUVTIl0sImp0aSI6IjgzYzRiMjMxLWVlZmEtNDJlZi1iNzcwLTVlMjVhMDk4N2FkMyIsImNsaWVudF9pZCI6InRlc3RlIn0.jjsm3nN-XT00yHezTOZy2lqZX6QIBKySO-nNHYuMsmg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/posts/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjYsImVtYWlsIjoibWFuYUBob3RtYWlsLmNvbSIsInVzZXJuYW1lIjoibWFuYSIsImdlbmRlciI6IkYiLCJjcmVhdGlvbkRhdGUiOlsyMDIyLDcsMTYsMSw1MywxNF0sInVwZGF0ZURhdGUiOlsyMDIyLDcsMTYsMSw1MywxNF19LCJ1c2VyX25hbWUiOiJtYW5hQGhvdG1haWwuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY1NzkzNjg3NiwiYXV0aG9yaXRpZXMiOlsiQVVUSE9SSVRJRVMiXSwianRpIjoiZDVjZjY4MjQtOWYxMi00MTE3LThkOTktMjFjOTZkMmNlNWE2IiwiY2xpZW50X2lkIjoidGVzdGUifQ.nZfKbxVPcrZp2d1OQ5Ulk_zPOaahXbnnesVVs5YgjNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/posts/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chart",
+			"item": [
+				{
+					"name": "User chart by gender",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjgsImVtYWlsIjoib2lAb2kuY29tIiwidXNlcm5hbWUiOiJvaSIsImdlbmRlciI6Ik0iLCJjcmVhdGlvbkRhdGUiOlsyMDIyLDgsMTEsMjIsMTYsMTcsNjk0NzU2MDAwXSwidXBkYXRlRGF0ZSI6WzIwMjIsOCwxMSwyMiwxNiwxNyw2OTQ3NTYwMDBdfSwidXNlcl9uYW1lIjoib2lAb2kuY29tIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sImV4cCI6MTY2MDI1NDgxMCwiYXV0aG9yaXRpZXMiOlsiQVVUSE9SSVRJRVMiXSwianRpIjoiYzU2MTRjM2UtMzVkZS00OTE2LTkzMmUtOTAxZTczMzZmYjRmIiwiY2xpZW50X2lkIjoidGVzdGUifQ.2q_bm7K4Wgdj2PcFB5oWIRrGDs1HZMgvk8bWaHBsNNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/api/chart",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"chart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"item": [
+				{
+					"name": "Logout - Revoke",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWQiOnsicGtBdXRob3IiOjIsImVtYWlsIjoiYXVyZW9AaG90bWFpbC5jb20iLCJ1c2VybmFtZSI6ImF1cmVvIiwiZ2VuZGVyIjoiTSIsImNyZWF0aW9uRGF0ZSI6WzIwMjIsOCwxMCwyMSw1NywzMywzOTAwNjAwMF0sInVwZGF0ZURhdGUiOlsyMDIyLDgsMTAsMjEsNTcsMzMsNDI0MTkwMDBdfSwidXNlcl9uYW1lIjoiYXVyZW9AaG90bWFpbC5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjYwMTY4NjYxLCJhdXRob3JpdGllcyI6WyJBVVRIT1JJVElFUyJdLCJqdGkiOiJkZjg1YmMxZC05NWQ1LTQ4NDEtYTc2Ni1kZjNmMzM1NTU2Y2UiLCJjbGllbnRfaWQiOiJ0ZXN0ZSJ9.OYxMDF3AYKd6-Klb4RL2cIz5UHU5gfRg-CzOcyq_V6U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/tokens/revoke",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tokens",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

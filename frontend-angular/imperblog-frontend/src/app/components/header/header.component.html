@@ -1,0 +1,77 @@
+<div class="container-fluid" style="background-color: white">
+
+  <br>
+
+  <div class="grid">
+
+    <div class="col-5 flex align-items-center justify-content-center">
+      <div style="text-align: center;">
+
+        <div>
+          <p-avatar image="assets/img/crown.png" styleClass="mr-2"  size="xlarge" shape="circle"></p-avatar>
+        </div>
+
+        <p>Welcome <strong>{{authService.jwtPayload?.logged.username}}</strong></p>
+
+      </div>
+    </div>
+
+    <div class="col-2 flex align-items-center justify-content-center">
+      <div>
+        <p-divider layout="vertical">
+          <i class="pi pi-prime" style="font-size: 3rem; color: #16a085;"></i>
+        </p-divider>
+      </div>
+    </div>
+
+    <div class="col-5 flex align-items-center justify-content-center">
+      <div style="text-align: center;">
+        <p-chip label="Chart" (click)="showModalDialogChart()" icon="pi pi-chart-pie" styleClass="m-2 custom-chip"></p-chip>
+        <p-chip label="Profile" routerLink="/profile" icon="pi pi-user" styleClass="m-2 custom-chip"></p-chip>
+        <p-chip label="Logout" (click)="showModalDialogLogout()"  icon="pi pi-sign-out" styleClass="m-2 custom-chip"></p-chip>
+      </div>
+    </div>
+
+    <div style="margin: 0 auto 0 auto" class="row">
+
+      <p-dialog  header="User chart by gender" [(visible)]="displayModalChart" [modal]="true"
+        [draggable]="false" [resizable]="false">
+
+        <p-chart width="80vw" height="50vh" type="pie" [data]="pieChartData"></p-chart>
+
+        <ng-template pTemplate="footer">
+
+          <button (click)="displayModalChart=false" style="color: #16a085; background-color: white;" >
+            <div id="buttonView">
+              <i class="pi pi-check mr-2"></i><strong>OK</strong>
+            </div>
+          </button>
+
+        </ng-template>
+
+      </p-dialog>
+
+    </div>
+
+    <p-dialog header="Logout" [(visible)]="displayModalLogout" [modal]="true" [style]="{width: '50vw'}"
+        [draggable]="false" [resizable]="false">
+        <p class="m-0">Are you sure you want to leave ?</p>
+            <ng-template pTemplate="footer">
+              <button (click)="logout()" style="color: #16a085; background-color: white;" >
+                <div id="buttonView">
+                  <i class="pi pi-check mr-2"></i><strong>Yes</strong>
+                </div>
+              </button>
+
+            </ng-template>
+    </p-dialog>
+
+  </div>
+
+</div>
+
+<nav class="navbar navbar-expand-sm  sticky-top" style="background-color: #16a085;">
+  <div class="container">
+    <a class="navbar-brand" href="#" style="color: white; font-weight: bold;">Welcome To ImperBlog</a>
+  </div>
+</nav>

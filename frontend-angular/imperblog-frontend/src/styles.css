@@ -1,0 +1,141 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* RESET */
+
+
+*
+{
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+
+body
+{
+  background-color: #f7f7f7;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+ul
+{
+  list-style: none;
+}
+
+img
+{
+  max-width: 100%;
+}
+
+.publicacoes, .container-fluid
+{
+  width: 100%;
+}
+
+.publicacao
+{
+  width: 90%;
+  background-color: white;
+  margin: 2em auto 2em auto;
+  box-shadow: 0 5px 5px #16a085;
+  word-wrap: break-word;
+}
+
+#buttonView, #buttonDeleted
+{
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#buttonView:hover
+{
+ background-color: rgb(240, 255, 247);
+}
+
+#buttonDeleted:hover
+{
+ background-color: rgb(255, 240, 245);
+}
+
+.textPost
+{
+  max-height: 10ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+
+/* ================================================== MOBILE FIRST ==================================================*/
+
+
+/* SMALL DEVICES - SMARTPHONES */
+
+@media screen and (min-width: 480px)
+{
+
+  .publicacao
+  {
+    width: 80%;
+  }
+
+}
+/* SMALL DEVICES - TABLETS*/
+@media screen and (min-width: 700px)
+{
+  .publicacao
+  {
+    width: 70%;
+  }
+}
+/* MEDIUM DEVICES - TABLETS & DESKTOPS*/
+@media screen and (min-width: 900px)
+{
+  .publicacao
+  {
+    width: 60%;
+  }
+}
+
+
+/* LARGE DEVICES - WIDE SCREENS*/
+@media screen and (min-width: 1180px)
+{
+  .publicacao
+  {
+    width: 50%;
+  }
+}
+
+
+/* personalizar a barra em geral, aqui estou definindo 10px de largura para a barra vertical
+e 10px de altura para a barra horizontal */
+::-webkit-scrollbar
+{
+    width: 10px;
+    height: 3%;
+}
+::-webkit-scrollbar-track
+{
+    background:#000;
+}
+
+/* aqui é a alça da barra, que demonstra a altura que você está na página
+estou colocando uma cor azul clara nela*/
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(transparent, #16a085);
+    border-radius: 10px;
+}

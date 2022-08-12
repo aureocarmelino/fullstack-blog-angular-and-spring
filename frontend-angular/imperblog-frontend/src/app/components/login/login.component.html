@@ -1,0 +1,41 @@
+<section>
+
+  <div class="contentBx">
+
+      <div class="formBx">
+
+          <h2> LOGIN | WELCOME </h2>
+
+          <form autocomplete="off">
+
+              <div class="inputBx">
+
+                <span>Email</span>
+                <input [(ngModel)]="newLogin.email"  required type="text"  id="email" name="email" >
+
+              </div>
+
+              <div class="inputBx">
+
+                <span>Password</span>
+                <input [(ngModel)]="newLogin.password"  required type="password" id="senha"  name="senha" >
+
+              </div>
+
+              <div class="inputBx">
+                <input type="submit" value="Sign in" (click)="loginUser()">
+              </div>
+
+              <div class="inputBx">
+                <p>Don't have an account ? <a routerLink="/register">Sign up</a></p>
+              </div>
+
+          </form>
+
+      </div>
+  </div>
+
+  <div class="imgBx">
+      <img src="assets/img/login.avif" alt="">
+  </div>
+</section>

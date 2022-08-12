@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<div class="container-fluid"><br>
+
+  <main class="publicacoes">
+
+    <article *ngFor="let post of listPost" class="publicacao" style="padding: 20px;">
+
+      <div class="row text">
+        <div class="col-sm-12">
+          <h4 style="text-align: center;">{{post.title}}</h4>
+
+          <p-divider align="center">
+            <span class="p-tag" style="background-color: #16a085; text-align: center;"> <i class="pi pi-user mr-2"></i>{{post.author.username}}</span>
+          </p-divider>
+
+          <div class="mt-5">
+            <p class="textPost" [innerHTML]="post.postContent"></p>
+          </div>
+
+          <button style="float: right; background-color: #16a085;"  (click)="findByPostId(post.pkPost)"  pButton pRipple type="button" icon="pi pi-search-plus" class="p-button-rounded p-button-success"></button>
+
+          <p-dialog header="{{postUser.title}}" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '80vw'}" [maximizable]="true"
+              [draggable]="false" [resizable]="false">
+              <br>
+              <p [innerHTML]="postUser.postContent"></p>
+
+              <ng-template pTemplate="footer">
+                <button (click)="displayMaximizable=false" style="color: #16a085; background-color: white;" > <div id="buttonView">
+                  <i class="pi pi-check mr-2"></i><strong>OK</strong>
+                </div></button>
+              </ng-template>
+          </p-dialog>
+
+        </div>
+      </div>
+    </article>
+
+    <div *ngIf="totalPost<=0" class="publicacao">
+      <img style="border-radius: 10%; width: 300px; height: 300px; " src="assets/img/emptyList.png" alt="Lista Vazia" >
+    </div>
+    <br>
+
+  </main>
+
+</div>
+
+
+
+
+

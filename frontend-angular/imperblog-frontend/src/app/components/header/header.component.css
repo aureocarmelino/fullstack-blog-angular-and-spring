@@ -1,0 +1,17 @@
+:host ::ng-deep .p-chip.custom-chip
+{
+  background: #16a085;
+  color: white;
+}
+
+:host ::ng-deep .p-chip.custom-chip:hover
+{
+  background: #1abc9c;
+  font-size: large;
+  cursor: pointer;
+}
+
+:host ::ng-deep .p-avatar
+{
+  border: 3px solid #16a085;
+}

@@ -1,0 +1,49 @@
+<div class="container-fluid" style="background-color: white">
+
+  <br>
+
+  <div class="grid">
+
+    <div class="col-5 flex align-items-center justify-content-center">
+      <div style="text-align: center;">
+        <p-chip label="Back" routerLink="/home" icon="pi pi-arrow-up-left" styleClass="m-2 custom-chip"></p-chip>
+      </div>
+    </div>
+
+    <div class="col-2 flex align-items-center justify-content-center">
+      <div>
+        <p-divider layout="vertical">
+          <i class="pi pi-prime" style="font-size: 3rem; color: #16a085;"></i>
+        </p-divider>
+      </div>
+    </div>
+
+    <div class="col-5 flex align-items-center justify-content-center">
+      <div style="text-align: center;">
+
+        <div>
+          <p-avatar image="assets/img/crown.png" styleClass="mr-2"  size="xlarge" shape="circle"></p-avatar>
+        </div>
+
+        <p><strong>{{authService.jwtPayload?.logged.username}}</strong></p>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<nav class="navbar navbar-expand-sm  sticky-top" style="background-color: black;">
+  <div class="container" style="text-align: center">
+    <div class="navbar-brand" style="color: white;font-weight: bold; margin: 0 auto 0 auto;">
+      My Profile
+     <p>
+      <i class="pi pi-envelope" style="color: #16a085;"></i> {{authService.jwtPayload?.logged.email}}
+      <i class="pi pi-user" style="color: #16a085;"></i> {{authService.jwtPayload?.logged.username}}
+     </p>
+    </div>
+  </div>
+</nav>
+

@@ -1,0 +1,56 @@
+<section>
+  <div class="contentBx">
+    <div class="formBx">
+      <h2>Sign Up</h2>
+
+      <form autocomplete="off">
+
+        <div class="inputBx">
+          <span>Email</span>
+          <input  [(ngModel)]="newAuthor.email" type="text" id="email" name="email" />
+        </div>
+
+        <div class="inputBx">
+          <span>Username</span>
+          <input [(ngModel)]="newAuthor.username" type="text" id="username" name="username" />
+        </div>
+
+        <div class="inputBx">
+          <span>Password</span>
+          <input [(ngModel)]="newAuthor.password" type="password" id="senha" name="senha" />
+        </div>
+
+        <div class="row inputBx">
+
+          <div class="col-6">
+            <span>M</span>
+            <p-radioButton name="gender" value="M"  [(ngModel)]="gender" inputId="M"></p-radioButton>
+          </div>
+
+          <div class="col-6">
+            <span>F</span>
+            <p-radioButton name="gender" value="F" [(ngModel)]="gender" inputId="F"></p-radioButton>
+          </div>
+
+        </div>
+
+
+        <div class="inputBx">
+          <input type="submit" value="Sign up" (click)="signup()" />
+        </div>
+
+        <div class="inputBx">
+          <p>Do you have an account ? <a routerLink="/login">Sign in</a></p>
+        </div>
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="imgBx">
+    <img src="assets/img/login.avif" alt="" />
+  </div>
+</section>
