@@ -198,9 +198,9 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 </p>
 
 
-**EN:	I'll be adding new features as time goes on, I hope you like it**  :heart: :happy:
+**EN:	I'll be adding new features as time goes on, I hope you like it**  :heart:
 
-**PT:	Vou adicionando novas funcionalidades consoante o tempo, espero que tenham gostado** :heart: :happy:
+**PT:	Vou adicionando novas funcionalidades consoante o tempo, espero que tenham gostado** :heart:
 
 # SEJA LUZ :bulb: 		BE LIGHT:bulb: 
 
