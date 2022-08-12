@@ -147,6 +147,8 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 <p align="center"> 
     <img src="myassets/run_test.PNG">
 </p>
+
+
 **EN:**   And as a result we will have all the tests executed :arrow_down_small:
 
 **PT:**	E como resultado teremos todos os testes executados :arrow_down_small:
