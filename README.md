@@ -167,6 +167,7 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 </p>
 
 
+
 **EN:**	And as a result we will have only the tests of the **PostServiceTest** class executed :arrow_down_small:
 
 **PT:**	E como resultado teremos somentes os testes da classe **PostServiceTest** executados
@@ -174,7 +175,7 @@ Para executar todos os testes em **simultâneo** faça como mostra a imagem a se
 <p align="center"> 
     <img src="myassets/unit_test2.png">
 </p>
-# :computer:	Postman Collection :satellite:
+# :computer:Postman Collection :satellite:
 
 `/postman_collection`
 
