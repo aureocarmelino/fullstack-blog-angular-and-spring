@@ -92,6 +92,8 @@ Application for creating blog posts, developed with Java using Spring Framework 
 <p align="center"> 
     <img src="myassets/create_database.PNG">
 </p>
+
+
 **EN**
 
 1. When starting the backend application, the database will automatically be loaded with the respective tables defined in `imperblog-backend/src/main/db/migration`
